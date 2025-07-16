@@ -1,6 +1,5 @@
 import Head from "next/head";
 import "./globals.css";
-import ClientOnly from "@/components/ClientOnly";
 
 export const metadata = {
   title: "Oluwatobiloba Portfolio",
@@ -11,12 +10,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Head>
-        <link rel="icon" href="../public/favicon.ico" />
-      </Head>
-      <body>
-        <ClientOnly>{children}</ClientOnly>
-      </body>
+      <head>
+        <link rel="icon" href="/favicon.ico" />
+      </head>
+      <body suppressHydrationWarning={true}>{children}</body>
     </html>
   );
 }
